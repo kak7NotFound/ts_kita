@@ -22,7 +22,7 @@ namespace ts_kita
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.database.ExecuteNonQuery($"insert into requests values ('{comboBox1.Text}', '{textBox1.Text}', '{comboBox2.Text}', '{Program.GetNow()}', '1', '{Program.GetNow()}', '{richTextBox1.Text}', '{textBox2.Text}')");
+            Program.database.ExecuteNonQuery($"insert into requests values ('{comboBox1.Text}', '{textBox1.Text}', '{comboBox2.Text}', '{Program.GetNow()}', '1', '{Program.GetNow()}', '{"Клиент:\n" + richTextBox1.Text}', '{textBox2.Text}')");
             this.Close();
         }
     }
