@@ -136,6 +136,7 @@
             this.Name = "Form1";
             this.Text = "ТехПоддержка | Гончаров 550";
             this.Activated += new System.EventHandler(this.Form1_Activated);
+            this.Click += new System.EventHandler(this.Form1_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
         }

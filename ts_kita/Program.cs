@@ -28,15 +28,6 @@ namespace ts_kita
             AttachConsole(ATTACH_PARENT_PROCESS);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            /*using (var reader = Program.database.GetReader("select * from requests"))
-            {
-                while (reader.Read())
-                {
-                    Console.WriteLine(reader.GetString(0));
-                }
-            }
-            Program.database.ExecuteNonQuery($"insert into requests values ('выф', 'фвыв', 'ывыв', 'фыва', 0, 'фываа', 'вывы')");*/
             Console.WriteLine(GetNow());
             Application.Run(new Form1());
 

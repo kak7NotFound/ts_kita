@@ -54,7 +54,7 @@ namespace ts_kita
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (var reader = Program.database.GetReader("select * from requests"))
+            using (var reader = Program.database.GetReader($"select * from requests where login = '{dataGridView1.CurrentRow.Cells[0].Value.ToString()}' and title = '{dataGridView1.CurrentRow.Cells[1].Value.ToString()}'"))
             {
                 while (reader.Read())
                 {
@@ -62,6 +62,11 @@ namespace ts_kita
                     return;
                 }
             }
+        }
+
+        private void Form1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(dataGridView1.CurrentRow.Cells[0].Value.ToString());
         }
     }
 }
