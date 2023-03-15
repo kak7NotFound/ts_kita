@@ -1,0 +1,10 @@
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\bin\Debug\ts_kita.exe.config
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\bin\Debug\ts_kita.exe
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\bin\Debug\ts_kita.pdb
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\obj\Debug\ts_kita.csproj.AssemblyReference.cache
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\obj\Debug\ts_kita.csproj.SuggestedBindingRedirects.cache
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\obj\Debug\ts_kita.Properties.Resources.resources
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\obj\Debug\ts_kita.csproj.GenerateResource.cache
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\obj\Debug\ts_kita.csproj.CoreCompileInputs.cache
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\obj\Debug\ts_kita.exe
+C:\Users\kak7\RiderProjects\ts_kita\ts_kita\obj\Debug\ts_kita.pdb
