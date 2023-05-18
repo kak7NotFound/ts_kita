@@ -8,14 +8,18 @@ namespace ts_kita
     {
         public static string strExeFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
 
-        // private SqliteConnection connection = new SqliteConnection(@"Data Source=" +
-        //                                                            DataBase.strExeFilePath.Substring(0,
-        //                                                                strExeFilePath.Length - 10) +
-        //                                                            @"\db.sqlite");
-        private SqliteConnection connection = new SqliteConnection(@"Data Source=C:\Users\kak7\Documents\GitHub\ts_kita\db.sqlite");
+        private SqliteConnection connection = new SqliteConnection(@"Data Source=" +
+                                                                   DataBase.strExeFilePath.Substring(0,
+                                                                       strExeFilePath.Length - 12) +
+                                                                   @"\db.sqlite");
+        // private SqliteConnection connection = new SqliteConnection(@"Data Source=C:\Users\kak7\Documents\GitHub\ts_kita\db.sqlite");
 
         public DataBase()
         {
+            Console.WriteLine(@"Data Source=" +
+                              DataBase.strExeFilePath.Substring(0,
+                                  strExeFilePath.Length - 12) +
+                              @"\db.sqlite");
             Console.WriteLine(connection);
             connection.Open();
         }
