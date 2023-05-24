@@ -29,7 +29,7 @@ namespace ts_kita
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Console.WriteLine(GetNow());
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
 
         }
 

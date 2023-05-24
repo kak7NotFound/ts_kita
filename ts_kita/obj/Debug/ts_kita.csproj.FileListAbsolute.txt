@@ -72,3 +72,4 @@ C:\Users\kak7\Documents\GitHub\ts_kita\ts_kita\bin\Debug\System.Threading.Tasks.
 C:\Users\kak7\Documents\GitHub\ts_kita\ts_kita\obj\Debug\ts_kita.csproj.CopyComplete
 C:\Users\kak7\Documents\GitHub\ts_kita\ts_kita\obj\Debug\ts_kita.CreateRequestFrom.resources
 C:\Users\kak7\Documents\GitHub\ts_kita\ts_kita\obj\Debug\ts_kita.CaseForm.resources
+C:\Users\kak7\Documents\GitHub\ts_kita\ts_kita\obj\Debug\ts_kita.LoginForm.resources

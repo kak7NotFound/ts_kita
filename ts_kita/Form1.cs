@@ -12,10 +12,13 @@ namespace ts_kita
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        public Form1(string permission)
         {
-            Program.database = new DataBase();
             InitializeComponent();
+            if (permission != "admin")
+            {
+                button1.Hide();
+            }
             SyncDataGrid();
         }
 
@@ -26,7 +29,17 @@ namespace ts_kita
             {
                 while (reader.Read())
                 {
-                    dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5));
+                    if (LoginForm.Permission == "admin")
+                    {
+                        dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5));
+                    }
+                    else
+                    {
+                        if (reader.GetString(0) == LoginForm.Permission)
+                        {
+                            dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5));
+                        }
+                    }
                 }
             }
         }
