@@ -17,7 +17,7 @@ namespace ts_kita
             InitializeComponent();
             if (permission != "admin")
             {
-                button1.Hide();
+                button3.Hide();
             }
             SyncDataGrid();
         }
@@ -31,11 +31,16 @@ namespace ts_kita
                 {
                     if (LoginForm.Permission == "admin")
                     {
-                        dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5));
+                        if (reader.GetString(8) != "true")
+                        {
+                            dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5));
+                            continue;
+                        }
+
                     }
                     else
                     {
-                        if (reader.GetString(0) == LoginForm.Permission)
+                        if (reader.GetString(0) == LoginForm.Login)
                         {
                             dataGridView1.Rows.Add(reader.GetString(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5));
                         }
@@ -50,13 +55,13 @@ namespace ts_kita
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new CreateRequestFrom().Show();
+            new CreateRequestFrom(LoginForm.Login).Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Console.WriteLine(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            Program.database.ExecuteNonQuery($"delete from requests where login = '{dataGridView1.CurrentRow.Cells[0].Value.ToString()}' and title = '{dataGridView1.CurrentRow.Cells[1].Value.ToString()}'");
+            Program.database.ExecuteNonQuery($"update requests set hide = 'true' where login = '{dataGridView1.CurrentRow.Cells[0].Value.ToString()}' and title = '{dataGridView1.CurrentRow.Cells[1].Value.ToString()}'");
             SyncDataGrid();
         }
 

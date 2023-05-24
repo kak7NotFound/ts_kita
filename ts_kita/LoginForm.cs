@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace ts_kita
 {
     public partial class LoginForm : Form
     {
-
         public static string Permission;
+        public static string Login;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -17,17 +17,20 @@ namespace ts_kita
         {
             Program.database = new DataBase();
 
-            using (var reader = Program.database.GetReader($"select * from users where login = '{textBox1.Text}' and password = '{textBox2.Text}'"))
+            using (var reader =
+                   Program.database.GetReader(
+                       $"select * from users where login = '{textBox1.Text}' and password = '{textBox2.Text}'"))
             {
                 while (reader.Read())
-                { 
-                    Permission = textBox1.Text; 
+                {
+                    Login = textBox1.Text;
+                    Permission = reader.GetString(2);
                     new Form1(textBox1.Text).Show();
-return;
+                    return;
                 }
             }
-            MessageBox.Show("Неверный логин или пароль", "Ошибка");
 
+            MessageBox.Show("Неверный логин или пароль", "Ошибка");
         }
 
         private void button1_KeyDown(object sender, KeyEventArgs e)

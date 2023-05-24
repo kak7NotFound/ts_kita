@@ -30,10 +30,19 @@ namespace ts_kita
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Program.database.ExecuteNonQuery($"update requests set messages = '{richTextBox1.Text + "\n\n" + "Оператор:\n" + textBox5.Text}' where login = '{login}' and title = '{title}'");
-            richTextBox1.Text = richTextBox1.Text + "\n\n" + "Оператор:\n" + textBox5.Text;
-            textBox5.Clear();
-
+            if (LoginForm.Permission != "admin")
+            {
+                Program.database.ExecuteNonQuery($"update requests set messages = '{richTextBox1.Text + "\n\n" + "Клиент:\n" + textBox5.Text}' where login = '{login}' and title = '{title}'");
+                richTextBox1.Text = richTextBox1.Text + "\n\n" + "Клиент:\n" + textBox5.Text;
+                textBox5.Clear(); 
+            }
+            else
+            {
+                Program.database.ExecuteNonQuery($"update requests set messages = '{richTextBox1.Text + "\n\n" + "Админ:\n" + textBox5.Text}' where login = '{login}' and title = '{title}'");
+                richTextBox1.Text = richTextBox1.Text + "\n\n" + "Админ:\n" + textBox5.Text;
+                textBox5.Clear(); 
+            }
+            
         }
     }
 }
